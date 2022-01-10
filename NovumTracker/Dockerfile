@@ -3,7 +3,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["tracker/tracker.csproj", "tracker/"]
+COPY ["NovumTracker/NovumTracker.csproj", "NovumTracker/"]
 COPY ["third-party/monotorrent/src/MonoTorrent.BEncoding/MonoTorrent.BEncoding.csproj", "MonoTorrent.BEncoding/"]
 COPY ["third-party/monotorrent/src/MonoTorrent.Client/MonoTorrent.Client.csproj", "MonoTorrent.Client/"]
 COPY ["third-party/monotorrent/src/MonoTorrent.Factories/MonoTorrent.Factories.csproj", "MonoTorrent.Factories/"]
@@ -15,15 +15,15 @@ COPY ["third-party/monotorrent/src/MonoTorrent.PiecePicking/MonoTorrent.PiecePic
 COPY ["third-party/monotorrent/src/MonoTorrent.PieceWriter/MonoTorrent.PieceWriter.csproj", "MonoTorrent.PieceWriter/"]
 COPY ["third-party/monotorrent/src/MonoTorrent.PortForwarding/MonoTorrent.PortForwarding.csproj", "MonoTorrent.PortForwarding/"]
 COPY ["third-party/monotorrent/src/MonoTorrent.Trackers/MonoTorrent.Trackers.csproj", "MonoTorrent.Trackers/"]
-RUN dotnet restore "tracker/tracker.csproj"
+RUN dotnet restore "NovumTracker/NovumTracker.csproj"
 COPY . .
-WORKDIR "/src/tracker"
-RUN dotnet build "tracker.csproj" -c Release -o /app/build
+WORKDIR "/src/NovumTracker"
+RUN dotnet build "NovumTracker.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "tracker.csproj" -c Release -o /app/publish
+RUN dotnet publish "NovumTracker.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "tracker.dll"]
+ENTRYPOINT ["dotnet", "NovumTracker.dll"]

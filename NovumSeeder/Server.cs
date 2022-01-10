@@ -2,7 +2,7 @@
 using MonoTorrent.Client;
 using MonoTorrent.TorrentWatcher;
 
-namespace seeder;
+namespace NovumSeeder;
 
 public class Server : BackgroundService
 {

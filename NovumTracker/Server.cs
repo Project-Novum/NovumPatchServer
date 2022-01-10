@@ -3,7 +3,7 @@ using MonoTorrent.Connections.TrackerServer;
 using MonoTorrent.TorrentWatcher;
 using MonoTorrent.TrackerServer;
 
-namespace tracker;
+namespace NovumTracker;
 
 public class Server : BackgroundService
 {

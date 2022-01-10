@@ -1,7 +1,7 @@
 ﻿using MonoTorrent;
 using MonoTorrent.TrackerServer;
 
-namespace seeder;
+namespace NovumSeeder;
 
 /// <summary>
 /// This is a sample implementation of how you could create a custom ITrackable

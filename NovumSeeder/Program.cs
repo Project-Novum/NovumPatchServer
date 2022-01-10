@@ -3,7 +3,7 @@
 using System.Net;
 using MonoTorrent.Client;
 using MonoTorrent.TorrentWatcher;
-using seeder;
+using NovumSeeder;
 
 var builder = Host.CreateDefaultBuilder(args);
 

@@ -6,7 +6,7 @@ using MonoTorrent.BEncoding;
 using MonoTorrent.Connections.TrackerServer;
 using MonoTorrent.TorrentWatcher;
 using MonoTorrent.TrackerServer;
-using tracker;
+using NovumTracker;
 
 var builder = Host.CreateDefaultBuilder(args);
 
