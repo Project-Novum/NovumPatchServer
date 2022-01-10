@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   tracker:
-    image: ghcr.io/project-novum/NovumPatchServer/NovumTracker:latest
+    image: ghcr.io/project-novum/novumpatchserver/novumtracker:latest
     restart: always
     ports:
       - "8001:54997"
@@ -13,7 +13,7 @@ services:
         target: /var/PatchData
 
   seeder:
-    image: ghcr.io/project-novum/NovumPatchServer/NovumSeeder:latest
+    image: ghcr.io/project-novum/novumpatchserver/novumseeder:latest
     restart: always
     network_mode: host
     scale: 4
@@ -26,7 +26,7 @@ services:
         target: /var/PatchData
 
   patch_server:
-    image: ghcr.io/project-novum/NovumPatchServer/NovumPatchServer:latest
+    image: ghcr.io/project-novum/novumpatchserver/novumpatchserver:latest
     restart: always
     ports:
       - "8002:80"

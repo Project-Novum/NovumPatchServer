@@ -38,7 +38,7 @@ jobs:
           context: .
           file: NovumSeeder/Dockerfile
           push: true
-          tags: ghcr.io/project-novum/NovumPatchServer/NovumSeeder:latest
+          tags: ghcr.io/project-novum/novumpatchserver/novumseeder:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: tracker
@@ -47,7 +47,7 @@ jobs:
           context: .
           file: NovumTracker/Dockerfile
           push: true
-          tags: ghcr.io/project-novum/NovumPatchServer/NovumTracker:latest
+          tags: ghcr.io/project-novum/novumpatchserver/novumtracker:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: patch_server
@@ -56,5 +56,5 @@ jobs:
           context: .
           file: NovumPatchServer/Dockerfile
           push: true
-          tags: ghcr.io/project-novum/NovumPatchServer/NovumPatchServer:latest
+          tags: ghcr.io/project-novum/novumpatchserver/novumpatchserver:latest
           labels: ${{ steps.meta.outputs.labels }}
